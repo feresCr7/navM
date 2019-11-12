@@ -1,24 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
+import MenuItem from './MenuItem'
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+const  menu = [
+  {
+    title :'Home',
+    link: '#',
+    active :'true'
+  },
+  {
+    title :'services',
+    link: '#1',
+    active :'true',
+    subMenu: ['for entrepreneurs',
+               'for students',
+                'for hobbylists']
+    
+  },
+  {
+    title :'Contact',
+    link: '#2',
+    active :'true'
+  }
+
+]
+function App(){
+  return(
+    <div className='list'>{
+      menu.map( (el , index) => <MenuItem item={el} key={index}/>)
+      }
+
     </div>
   );
 }
